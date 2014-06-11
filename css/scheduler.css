@@ -1,0 +1,19 @@
+.calendar-link::before { font-family: "dashicons"; content: "\f145"; top: 1px; width: 22px; height: 20px; }
+
+#scheduler-settings { margin-top: 10px; border: 1px solid #ddd; padding: 5px; border-radius: 6px; }
+#schedulerdate { width: 100px; cursor: pointer; text-align: center; background: #fff; }
+#schedulertime { width: 60px; cursor: pointer; text-align: center; background: #fff; }
+#scheduler-postmeta-wrapper { margin-top: 10px; }
+#scheduler-postmeta-wrapper select { margin-top: 5px; }
+
+#scheduler-status-box,
+#scheduler-category-box,
+#scheduler-postmeta-box { border: 1px solid #ddd; background: #ddd; padding: 5px; border-radius: 6px; margin-bottom: 5px; margin-top: 5px; }
+
+#scheduler-status-box select,
+#scheduler-category-box select,
+#scheduler-postmeta-box select { margin-bottom: 10px; }
+
+#scheduler-status-box select,
+#scheduler-postmeta-box select,
+#scheduler-category-box select { width: 100%; }
