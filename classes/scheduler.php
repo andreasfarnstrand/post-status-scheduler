@@ -17,8 +17,6 @@
   class Scheduler {
 
     private $options = array();
-    private $post_statuses = array();
-
 
     /**
     * Constructor - Add hooks
@@ -27,17 +25,8 @@
       
       global $pagenow;
 
-      // All valid post statuses to choose from
-      $this->post_statuses = array( 
-        'draft' => __( 'Draft', 'post-status-scheduler' ), 
-        'pending' => __( 'Pending', 'post-status-scheduler' ), 
-        'private' => __( 'Private', 'post-status-scheduler' ),
-        'trash' =>  __( 'Trashbin', 'post-status-scheduler' ),
-        'deleted' => __( 'Delete (forced)', 'post-status-scheduler' ),
-      );
-
       // Load translations
-      add_action( 'init', array( $this , 'load_translations') );
+      add_action( 'plugins_loaded', array( $this , 'load_translations') );
 
       // Add the action used for unpublishing posts
       add_action( 'schedule_post_status_change', array( $this, 'schedule_post_status_change' ), 10, 1 );
@@ -282,7 +271,7 @@
       $scheduler_check_meta = !empty( $scheduler_check_meta ) ? true : false;
       $scheduler_meta_key = get_post_meta( $post_id, 'scheduler_meta_key', true );
       
-      $valid_statuses = array_keys( $this->post_statuses );
+      $valid_statuses = array_keys( Scheduler::post_statuses() );
 
       // Add a filter for developers to change the flow
       $filter_result = apply_filters( 'post_status_scheduler_before_execution', array( 'status' => $scheduler_status, 'valid_statuses' => $valid_statuses ), $post_id );
@@ -455,8 +444,6 @@
         $scheduler_check_meta_checked = ( $scheduler_check_meta ) ? ' checked="checked" ' : '';
         $scheduler_check_meta_show = ( !$scheduler_check_meta ) ? ' style="display: none;" ' : '';
 
-        echo '<pre>' . print_r( $this->post_statuses, true ) . '</pre>';
-
         // Write the HTML
         echo '<div class="misc-pub-section misc-pub-section-last" id="scheduler-wrapper">
         <span id="timestamp" class="calendar-link before">'
@@ -473,7 +460,7 @@
         . '<label>' . __( 'Set status to', 'post-status-scheduler' ) . '</label> '
         . '<select name="scheduler[status]" style="width: 98%;">';
 
-        foreach( $this->post_statuses as $key => $value ) {
+        foreach( Scheduler::post_statuses() as $key => $value ) {
 
           echo sprintf( '<option value="%s" ' . selected( $status,  $key ) . ' >%s</option>', $key, $value );
 
@@ -729,6 +716,27 @@
       $categories = get_categories( $args );
 
       return $categories;
+
+    }
+
+
+    /**
+     * post_statuses
+     * 
+     * Get the valid post stauses to use
+     * 
+     * @return array
+     */
+    public static function post_statuses() {
+
+      // All valid post statuses to choose from
+      return array( 
+        'draft' => __( 'Draft', 'post-status-scheduler' ), 
+        'pending' => __( 'Pending', 'post-status-scheduler' ), 
+        'private' => __( 'Private', 'post-status-scheduler' ),
+        'trash' =>  __( 'Trashbin', 'post-status-scheduler' ),
+        'deleted' => __( 'Delete (forced)', 'post-status-scheduler' ),
+      );
 
     }
 
