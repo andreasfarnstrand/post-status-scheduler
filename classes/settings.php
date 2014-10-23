@@ -84,17 +84,19 @@
         array( $this, 'sanitize' ) // Sanitize
       );
 
+      /* SECTION POSTTYPES */
+
       add_settings_section(
         'posttypes', // ID
-        __( 'Post Types', 'post-status-scheduler' ), // Title
+        __( 'Post Types and meta keys', 'post-status-scheduler' ), // Title
         array( $this, 'print_section_info' ), // Callback
         'post-status-scheduler' // Page
-      );  
+      );
 
       add_settings_field(
         'allowed_posttypes', // ID
         __( 'Check the post types you wish to display the Scheduler on', 'post-status-scheduler' ), // Title 
-        array( $this, 'id_number_callback' ), // Callback
+        array( $this, 'allowed_posttypes_callback' ), // Callback
         'post-status-scheduler', // Page
         'posttypes' // Section           
       );
@@ -105,6 +107,42 @@
         array( $this, 'metafield_callback' ), // Callback
         'post-status-scheduler', // Page
         'posttypes' // Section           
+      );
+
+
+      /* SECTION NOTIFICATION EMAIL */
+
+      add_settings_section(
+        'notifications', // ID
+        __( 'Notification', 'post-status-scheduler' ), // Title
+        array( $this, 'print_notification_section_info' ), // Callback
+        'post-status-scheduler' // Page
+      );
+
+      add_settings_field(
+        'notification_email_enabled', // ID
+        __( 'Enable email notification option', 'post-status-scheduler' ), // Title 
+        array( $this, 'notification_email_enabled_callback' ), // Callback
+        'post-status-scheduler', // Page
+        'notifications' // Section           
+      );
+
+
+      /* SECTION EXTRA COLUMN ON EDIT PAGE */
+
+      add_settings_section(
+        'column', // ID
+        __( 'Extra column', 'post-status-scheduler' ), // Title
+        array( $this, 'print_column_section_info' ), // Callback
+        'post-status-scheduler' // Page
+      );
+
+      add_settings_field(
+        'extra_column_enabled', // ID
+        __( 'Enable extra column on posttype edit page', 'post-status-scheduler' ), // Title 
+        array( $this, 'extra_column_enabled_callback' ), // Callback
+        'post-status-scheduler', // Page
+        'column' // Section           
       );
 
     }
@@ -146,9 +184,30 @@
 
       }
 
+      if( isset( $input['notification_email_enabled'] ) ) {
+
+        $new_input['notification_email_enabled'] = true;
+
+      } else {
+
+        $new_input['notification_email_enabled'] = false;        
+
+      }
+
+      if( isset( $input['extra_column_enabled'] ) ) {
+
+        $new_input['extra_column_enabled'] = true;
+
+      } else {
+
+        $new_input['extra_column_enabled'] = false;        
+
+      }
+
       return $new_input;
       
     }
+
 
     /** 
      * Print the Section text
@@ -160,12 +219,32 @@
     }
 
 
+    /** 
+     * Print the Section text
+     */
+    public function print_notification_section_info() {
+        
+      print __( 'Enabling this option makes it possible to send an email notification to the post author on a scheduled change execution.', 'post-status-scheduler' );
+
+    }
+
+
+    /** 
+     * Print the Section text
+     */
+    public function print_column_section_info() {
+        
+      print __( 'Settings for adding extra column "Scheduled date" on edit page. This column will only be displayed on posttypes that are allowed for scheduling', 'post-status-scheduler' );
+
+    }
+
+
     /**
      * id_number_callback
      * 
      * Callback for the posttypes allowed
      */
-    public function id_number_callback() {
+    public function allowed_posttypes_callback() {
 
       // Get all valid public post types
       $post_types = get_post_types( array( 'public' => true ) );
@@ -239,7 +318,46 @@
     }
 
 
-  }
+    /**
+     * notification_email_enabled_callback
+     * 
+     * Callback for the enabling of notification option
+     */
+    public function notification_email_enabled_callback() {
 
+      $options = self::get_options();
+      $enabled = !empty( $options['notification_email_enabled'] ) ? $options['notification_email_enabled'] : '';
+      ?>
+
+      <input type="checkbox" name="post_status_scheduler[notification_email_enabled]" <?php checked( $enabled, true ); ?> />
+      
+      <?php
+    }
+
+
+    /**
+     * notification_email_enabled_callback
+     * 
+     * Callback for the enabling of notification option
+     */
+    public function extra_column_enabled_callback() {
+
+      $options = self::get_options();
+      $enabled = !empty( $options['extra_column_enabled'] ) ? $options['extra_column_enabled'] : '';
+      ?>
+
+      <input type="checkbox" name="post_status_scheduler[extra_column_enabled]" <?php checked( $enabled, true ); ?> />
+      
+      <?php
+    }
+
+
+    public static function get_options() {
+
+      return get_option('post_status_scheduler');
+
+    }
+
+  }
 
 ?>

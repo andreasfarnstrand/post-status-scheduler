@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: post-status-scheduler\n"
-"POT-Creation-Date: 2014-06-11 17:53+0100\n"
-"PO-Revision-Date: 2014-06-11 18:01+0100\n"
+"POT-Creation-Date: 2014-10-23 15:50+0100\n"
+"PO-Revision-Date: 2014-10-23 15:51+0100\n"
 "Last-Translator: Andeas Färnstrand <andreas@farnstranddev.se>\n"
 "Language-Team:  <andreas@farnstranddev.se>\n"
 "Language: English\n"
@@ -14,82 +14,94 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: classes/scheduler.php:37
-msgid "Draft"
-msgstr ""
-
-#: classes/scheduler.php:38
-msgid "Pending"
-msgstr ""
-
-#: classes/scheduler.php:39
-msgid "Private"
-msgstr ""
-
-#: classes/scheduler.php:40
-msgid "Trashbin"
-msgstr ""
-
-#: classes/scheduler.php:41
-msgid "Delete (forced)"
-msgstr ""
-
-#: classes/scheduler.php:468
+#: classes/scheduler.php:503
 msgid "Schedule Status Change"
 msgstr ""
 
-#: classes/scheduler.php:470
+#: classes/scheduler.php:505
 msgid "Date"
 msgstr ""
 
-#: classes/scheduler.php:472
+#: classes/scheduler.php:507
 msgid "Time"
 msgstr ""
 
-#: classes/scheduler.php:476
+#: classes/scheduler.php:511
 msgid "Change status"
 msgstr ""
 
-#: classes/scheduler.php:478
+#: classes/scheduler.php:513
 msgid "Set status to"
 msgstr ""
 
-#: classes/scheduler.php:493
-msgid "Add or remove category"
+#: classes/scheduler.php:528
+msgid "Change categories"
 msgstr ""
 
-#: classes/scheduler.php:495
-msgid "Add"
+#: classes/scheduler.php:530
+msgid "The post will have the following categories on scheduled time"
 msgstr ""
 
-#: classes/scheduler.php:496
-msgid "Remove"
-msgstr ""
-
-#: classes/scheduler.php:513
+#: classes/scheduler.php:580
 msgid "Remove postmeta"
 msgstr ""
 
-#: classes/scheduler.php:550
+#: classes/scheduler.php:608
+msgid "Send email notification on change"
+msgstr ""
+
+#: classes/scheduler.php:633
 msgid "Scheduled date"
 msgstr ""
 
-#: classes/settings.php:43 classes/settings.php:61
+#: classes/scheduler.php:839
+msgid "Draft"
+msgstr ""
+
+#: classes/scheduler.php:840
+msgid "Pending"
+msgstr ""
+
+#: classes/scheduler.php:841
+msgid "Private"
+msgstr ""
+
+#: classes/scheduler.php:842
+msgid "Trashbin"
+msgstr ""
+
+#: classes/scheduler.php:843
+msgid "Delete (forced)"
+msgstr ""
+
+#: classes/settings.php:44 classes/settings.php:62
 msgid "Post Status Scheduler"
 msgstr ""
 
-#: classes/settings.php:88
-msgid "Post Types"
+#: classes/settings.php:91
+msgid "Post Types and meta keys"
 msgstr ""
 
-#: classes/settings.php:95
+#: classes/settings.php:98
 msgid "Check the post types you wish to display the Scheduler on"
 msgstr ""
 
-#: classes/settings.php:103
+#: classes/settings.php:106
 msgid "Mark allowed meta fields to be shown as removable"
 msgstr ""
 
-#: classes/settings.php:157
+#: classes/settings.php:119
+msgid "Notification"
+msgstr ""
+
+#: classes/settings.php:126
+msgid "Enable email notification option"
+msgstr ""
+
+#: classes/settings.php:190
 msgid "Enter your settings below:"
+msgstr ""
+
+#: classes/settings.php:199
+msgid "Email notification settings:"
 msgstr ""

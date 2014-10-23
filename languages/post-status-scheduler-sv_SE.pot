@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: post-status-scheduler\n"
-"POT-Creation-Date: 2014-06-11 17:53+0100\n"
-"PO-Revision-Date: 2014-06-11 21:15+0100\n"
+"POT-Creation-Date: 2014-10-23 15:58+0100\n"
+"PO-Revision-Date: 2014-10-23 16:00+0100\n"
 "Last-Translator: Andeas Färnstrand <andreas@farnstranddev.se>\n"
 "Language-Team:  <andreas@farnstranddev.se>\n"
 "Language: English\n"
@@ -14,82 +14,133 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: classes/scheduler.php:37
-msgid "Draft"
-msgstr "Utkast"
+#: classes/email.php:25
+msgid "Post Status Scheduler update"
+msgstr "Uppdatering Post Status Scheduler"
 
-#: classes/scheduler.php:38
-msgid "Pending"
-msgstr "Väntar på granskning"
+#: classes/email.php:33
+msgid "A scheduled update has been executed at"
+msgstr "En schemalagd ändring har blivit exekverad"
 
-#: classes/scheduler.php:39
-msgid "Private"
-msgstr "Privat"
+#: classes/email.php:33
+msgid "on your post"
+msgstr "på din post"
 
-#: classes/scheduler.php:40
-msgid "Trashbin"
-msgstr "Papperskorg"
+#: classes/email.php:34
+msgid "Regards"
+msgstr "Hälsningar"
 
-#: classes/scheduler.php:41
-msgid "Delete (forced)"
-msgstr "Radera (tvingad)"
-
-#: classes/scheduler.php:468
+#: classes/scheduler.php:503
 msgid "Schedule Status Change"
 msgstr "Schemalägg statusändring"
 
-#: classes/scheduler.php:470
+#: classes/scheduler.php:505
 msgid "Date"
 msgstr "Datum"
 
-#: classes/scheduler.php:472
+#: classes/scheduler.php:507
 msgid "Time"
 msgstr "Tid"
 
-#: classes/scheduler.php:476
+#: classes/scheduler.php:511
 msgid "Change status"
 msgstr "Ändra status"
 
-#: classes/scheduler.php:478
+#: classes/scheduler.php:513
 msgid "Set status to"
 msgstr "Ändra status till"
 
-#: classes/scheduler.php:493
-msgid "Add or remove category"
-msgstr "Lägg till eller ta bort kategori"
+#: classes/scheduler.php:528
+msgid "Change categories"
+msgstr "Ändra kategorier"
 
-#: classes/scheduler.php:495
-msgid "Add"
-msgstr "Lägg till"
+#: classes/scheduler.php:530
+msgid "The post will have the following categories on scheduled time"
+msgstr "Följande kategorier kommer att sättas vid schemalagd tid"
 
-#: classes/scheduler.php:496
-msgid "Remove"
-msgstr "Ta bort"
-
-#: classes/scheduler.php:513
+#: classes/scheduler.php:580
 msgid "Remove postmeta"
 msgstr "Ta bort postmeta"
 
-#: classes/scheduler.php:550
+#: classes/scheduler.php:608
+msgid "Send email notification on change"
+msgstr "Skicka epostnotifiering vid ändring"
+
+#: classes/scheduler.php:633
 msgid "Scheduled date"
 msgstr "Schemalagt datum"
 
-#: classes/settings.php:43 classes/settings.php:61
+#: classes/scheduler.php:839
+msgid "Draft"
+msgstr "Utkast"
+
+#: classes/scheduler.php:840
+msgid "Pending"
+msgstr "Väntar på granskning"
+
+#: classes/scheduler.php:841
+msgid "Private"
+msgstr "Privat"
+
+#: classes/scheduler.php:842
+msgid "Trashbin"
+msgstr "Papperskorg"
+
+#: classes/scheduler.php:843
+msgid "Delete (forced)"
+msgstr "Radera (tvingad)"
+
+#: classes/settings.php:44 classes/settings.php:62
 msgid "Post Status Scheduler"
 msgstr "Post Status Scheduler"
 
-#: classes/settings.php:88
-msgid "Post Types"
-msgstr "Posttyper"
+#: classes/settings.php:91
+msgid "Post Types and meta keys"
+msgstr "Posttyper och metakeys"
 
-#: classes/settings.php:95
+#: classes/settings.php:98
 msgid "Check the post types you wish to display the Scheduler on"
 msgstr "Kryssa i de posttyper som du vill visa schemaläggaren på"
 
-#: classes/settings.php:103
+#: classes/settings.php:106
 msgid "Mark allowed meta fields to be shown as removable"
 msgstr "Märk de metafält som skall vara valbara för borttagning"
 
-#: classes/settings.php:157
+#: classes/settings.php:119
+msgid "Notification"
+msgstr "Notifikation"
+
+#: classes/settings.php:126
+msgid "Enable email notification option"
+msgstr "Aktivera epostnotifiering"
+
+#: classes/settings.php:190
 msgid "Enter your settings below:"
 msgstr "Ange inställningar nedan:"
+
+#: classes/settings.php:199
+msgid "Email notification settings:"
+msgstr "Inställningar för epostnotifiering"
+
+#~ msgid "Post Types"
+#~ msgstr "Posttyper"
+
+#~ msgid "Email subject"
+#~ msgstr "Epostämne"
+
+#~ msgid "Email body"
+#~ msgstr "Epostmeddelande"
+
+#~ msgid ""
+#~ "Edit the email settings used by the notification email on a scheduled "
+#~ "change:"
+#~ msgstr "Ändra epostinställningarna som används vid notifikationsepost"
+
+#~ msgid "Add or remove category"
+#~ msgstr "Lägg till eller ta bort kategori"
+
+#~ msgid "Add"
+#~ msgstr "Lägg till"
+
+#~ msgid "Remove"
+#~ msgstr "Ta bort"

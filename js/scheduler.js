@@ -32,6 +32,8 @@ jQuery( document ).ready( function( $ ) {
        $('#scheduler-status-box').slideUp();
 
     }
+
+    toggle_email_notification();
   });
 
   $('#scheduler-category').change( function() {
@@ -44,6 +46,8 @@ jQuery( document ).ready( function( $ ) {
        $('#scheduler-category-box').slideUp();
 
     }
+
+    toggle_email_notification();
   });
 
   $('#scheduler-postmeta').change( function() {
@@ -56,6 +60,25 @@ jQuery( document ).ready( function( $ ) {
        $('#scheduler-postmeta-box').slideUp();
 
     }
+
+    toggle_email_notification();
   });
+
+  toggle_email_notification();
+
+  function toggle_email_notification() {
+
+    if( $('#scheduler-status').is(':checked') || $('#scheduler-category').is(':checked') || $('#scheduler-postmeta').is(':checked') ) {
+
+      $('#scheduler-email-notification').removeAttr('disabled');
+
+    } else {
+
+      $('#scheduler-email-notification').attr('disabled', 'disabled');
+      $('#scheduler-email-notification').removeAttr('checked', 'checked');
+
+    }
+
+  }
 
 });
