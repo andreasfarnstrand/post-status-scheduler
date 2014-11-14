@@ -4,7 +4,7 @@
   /*
   Plugin Name: Post Status Scheduler
   Description: Change status, category or postmeta of any post type at a scheduled timestamp.
-  Version: 1.0.0
+  Version: 1.0.1
   Author: Andreas Färnstrand <andreas@farnstranddev.se>
   Author URI: http://www.farnstranddev.se
   Text Domain: post-status-scheduler
@@ -41,7 +41,7 @@
  		if( !defined( 'POST_STATUS_SCHEDULER_PLUGIN_PATH' ) )        define( 'POST_STATUS_SCHEDULER_PLUGIN_PATH', plugin_dir_url( __FILE__ ) );
  		if( !defined( 'POST_STATUS_SCHEDULER_TEXTDOMAIN' ) )         define( 'POST_STATUS_SCHEDULER_TEXTDOMAIN', 'post_status_scheduler' );
     if( !defined( 'POST_STATUS_SCHEDULER_TEXTDOMAIN_PATH' ) )    define( 'POST_STATUS_SCHEDULER_TEXTDOMAIN_PATH', dirname( plugin_basename( __FILE__) ) .'/languages' );
-    if( !defined( 'POST_STATUS_SCHEDULER_VERSION' ) )            define( 'POST_STATUS_SCHEDULER_VERSION', '1.0.0' );
+    if( !defined( 'POST_STATUS_SCHEDULER_VERSION' ) )            define( 'POST_STATUS_SCHEDULER_VERSION', '1.0.1' );
 
     // Create a new scheduler instance
   	$pss = new \post_status_scheduler\Scheduler();

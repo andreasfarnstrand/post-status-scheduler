@@ -247,7 +247,7 @@
     public function allowed_posttypes_callback() {
 
       // Get all valid public post types
-      $post_types = get_post_types( array( 'public' => true ) );
+      $post_types = get_post_types();
 
       $options = get_option( 'post_status_scheduler' );
 

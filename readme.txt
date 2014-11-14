@@ -3,7 +3,7 @@ Contributors: farne
 Tags: posts, categories, postmeta, poststatus, change, schedule, scheduling
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ Email Notification ( version 1.0.0 ):
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed bug where, in settings, you could only choose public post types to show scheduler on (Reported on Github).
+
 = 1.0.0 =
 * New feature for sending email notification to post author when executing a scheduled update.
 * New feature makes it possible to show/remove the "Scheduled date" column on posttype edit page.
@@ -68,3 +71,8 @@ Email Notification ( version 1.0.0 ):
 
 = 0.1 =
 * Initial version
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+* Gives you more post types to choose from.
