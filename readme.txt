@@ -3,7 +3,7 @@ Contributors: farne
 Tags: posts, categories, postmeta, poststatus, change, schedule, scheduling
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ Email Notification ( version 1.0.0 ):
 
 == Changelog ==
 
+= 1.0.2 = 
+* Fixed to use the correct textdomain. Translations should now work correctly.
+
 = 1.0.1 =
 * Fixed bug where, in settings, you could only choose public post types to show scheduler on (Reported on Github).
 
@@ -73,6 +76,9 @@ Email Notification ( version 1.0.0 ):
 * Initial version
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Upgrade to this version to get translations to work 100%.
 
 = 1.0.1 =
 * Gives you more post types to choose from.

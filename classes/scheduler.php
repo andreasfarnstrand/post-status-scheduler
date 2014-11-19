@@ -23,7 +23,7 @@
   use \post_status_scheduler\Settings as Settings;
   use \post_status_scheduler\Email as Email;
    
-  if( !defined( 'POST_STATUS_SCHEDULER_TEXTDOMAIN' ) ) define( 'POST_STATUS_SCHEDULER_TEXTDOMAIN', 'post_status_scheduler' );
+  if( !defined( 'POST_STATUS_SCHEDULER_TEXTDOMAIN' ) ) define( 'POST_STATUS_SCHEDULER_TEXTDOMAIN', 'post-status-scheduler' );
 
   class Scheduler {
 
